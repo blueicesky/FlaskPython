@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../static/cibc.ico">
+  <title>CIBC Data Studio | OTC Break Owner Predictor - Train Result</title>
+  <link rel="stylesheet" type="text/css" href="../static/component.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/htmlTable.js"></script>
+  <style>
+      table{
+        border: 4px double black;
+        table-layout: auto;
+        position: relative;
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+  </style>
+</head>
+
+<body onLoad="buildHtmlTable('#BeforeTable'); newbuildHtmlTable('#AfterTable')">
+    <div class="Logo">
+        <img class="logoSub" src="../static/CIBC_DataStudioLogo.png">
+        <h1 class="hTitle1">New Data Training Results</h1>
+    <br>
+    <br>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <div id="toHide" class="content">
+        <table class="table" id="BeforeTable" align="center" cellpadding="8">
+            <caption><b><u>Current Model</u></b></caption>
+        </table>
+        <h3></h3>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <table class="table" id="AfterTable" align="center" cellpadding="8">
+            <caption><b><u><i>New Model</i></u></b></caption>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div align="center">
+            <form action="" method="post" enctype=multipart/form-data>
+               <input type="submit" class="positive_Button" value="Accept Changes" name="accept"/>
+               <input type="submit" class="negative_Button" value="Discard Changes" name="accept"/>
+            <br>
+            <br>
+            <br>
+            </form>
+        </div>
+    </div>
+</div>  
+</body>
+
+
+
+<script>
+    var errorOcurred = '{{ errorOcurred }}';
+    var errorInfo = '{{ errorInfo }}';
+
+    var errorBool = errorOcurred == 'True'
+
+    if (errorBool){
+        window.alert(errorInfo);
+    }
+    
+    
+    var newjson_table = '{{ newjsonTable|tojson|safe}}';
+    var currentjson_table = '{{ currentjsonTable|tojson|safe}}';
+
+    function decodeJSON(encodedJSON) {
+            var decodedJSON = $('<div/>').html(encodedJSON).text();
+            return $.parseJSON(decodedJSON);
+    }
+
+    var newTable = decodeJSON(newjson_table);
+    var currentTable = decodeJSON(currentjson_table);
+
+    // Builds the HTML Table out of List.
+    function buildHtmlTable(selector) {
+      var columns = addAllColumnHeaders(currentTable, selector);
+
+      for (var i = 0; i < currentTable.length; i++) {
+        var row$ = $('<tr/>');
+        for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+          var cellValue = currentTable[i][columns[colIndex]];
+          if (cellValue == null) cellValue = "";
+          cellValue += "     ";
+          row$.append($('<td/>').html(cellValue));
+        }
+        $(selector).append(row$);
+      }
+    }
+
+    function newbuildHtmlTable(selector) {
+      var columns = addAllColumnHeaders(newTable, selector);
+
+      for (var i = 0; i < newTable.length; i++) {
+        var row$ = $('<tr/>');
+        for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+          var cellValue = newTable[i][columns[colIndex]];
+          if (cellValue == null) cellValue = "";
+          cellValue += "     ";
+          row$.append($('<td/>').html(cellValue));
+        }
+        $(selector).append(row$);
+
+      }
+    }
+
+    // Adds a header row to the table and returns the set of columns.
+    // Need to do union of keys from all records as some records may not contain
+    // all records.
+    function addAllColumnHeaders(resultList, selector) {
+      var columnSet = [];
+      var headerTr$ = $('<tr/>');
+
+      for (var i = 0; i < resultList.length; i++) {
+        var rowHash = resultList[i];
+        for (var key in rowHash) { 
+          if ($.inArray(key, columnSet) == -1) {
+            columnSet.push(key);
+            key += "     ";
+            headerTr$.append($('<th/>').html(key));
+          }
+        }
+      }
+      $(selector).append(headerTr$);
+      return columnSet;
+    }
+</script>
+</html>

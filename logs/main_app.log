@@ -1,0 +1,6 @@
+2017-11-08 11:08:39,277 - INFO - Starting Application
+2017-11-08 11:08:39,277 - INFO - Reading variables from config file.
+2017-11-08 11:08:39,278 - INFO - Setting Flask app initial variables
+2017-11-08 11:08:39,279 - INFO - Setting up model variables.
+2017-11-08 11:08:39,279 - INFO - No pickle file found. Creating new model class.
+2017-11-08 11:08:39,279 - INFO - Initial stage complete.

@@ -1,0 +1,279 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family: 'Raleway', sans-serif;font-weight: 300;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C" "\201D" "\2018" "\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em;}legend{border:0;padding:0;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+/* style for inputfile1 */
+.inputfile1 + label {
+    color: #d3394c;
+}
+
+.inputfile1:focus + label,
+.inputfile1.has-focus + label,
+.inputfile1 + label:hover {
+    color: #722040;
+}
+
+.inputfile1 + label figure {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #d3394c;
+    display: block;
+    padding: 20px;
+    margin: 0 auto 10px;
+}
+
+.inputfile1:focus + label figure,
+.inputfile1.has-focus + label figure,
+.inputfile1 + label:hover figure {
+    background-color: #722040;
+}
+
+.inputfile1 + label svg {
+    width: 100%;
+    height: 100%;
+    fill: #f1e5e6;
+}
+.positive_Button {
+    position: relative;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-color: white;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.negative_Button {
+    position: relative;
+    background-color: #cd0000;
+    border: none;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-color: white;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.Admin_Button {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background-color: #FFFFFF; /* WHITE */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.Modify_Button {
+    position: absolute;
+    top: 70px;
+    right: 5px;
+    background-color: #BBDBB4; /* LIGHT Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.Predicta_Button {
+    position: absolute;
+    top: 130px;
+    right: 5px;
+    background-color: #BBDBB4; /* LIGHT Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.Download_db_Button {
+    position: absolute;
+    top: 190px;
+    right: 5px;
+    background-color: #BBDBB4; /* LIGHT Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.GoBack_Button {
+    position: absolute;
+    top: 70px;
+    right: 5px;
+    background-color: #FFFFFF; /* White */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+html{
+                background-color: #A64253;
+            }
+            .Logo{
+                height: 20%;
+            }
+            
+            .logoSub{
+                position: absolute;
+                top: 1%;
+                left: 0.5%;
+                height: 6%;
+            }
+            
+            .container{
+                position: absolute;
+                top:20%;
+                width: 80%;
+                left: 10%;
+            }
+
+            .content{
+                background-color: #FCEADE;
+                width: 60%;
+                padding-top: 10%;
+                margin-right: 20%;
+                margin-left: 20%;
+                padding-bottom: 4%;
+            }
+            .random{
+                color: white;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+            }
+            
+            footer{
+                bottom: -38%;
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                left: 0px;
+            }
+            
+            
+            .upload{
+                display: block;
+                margin: 0 auto;
+            }
+
+.hTitle1 {
+    position: absolute;
+    top: 2%;
+    width: 100%;
+    text-align: center;
+    letter-spacing: -1px;
+    font-size: 3em;
+    line-height: 1;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.hTitle2 {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    color: #d3394c;
+    letter-spacing: -1px;
+    font-size: 1.5em;
+    line-height: 1;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color:antiquewhite;
+}
+
+.hTitle3 {
+    position: absolute;
+    top: 5%;
+    width: 80%;
+    text-align: center;
+    color: #d3394c;
+    letter-spacing: -1px;
+    font-size: 2em;
+    line-height: 1;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}

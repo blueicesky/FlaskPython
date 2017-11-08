@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CIBC Learning Session</title>
+		<link rel="shortcut icon" href="cibc.ico">
+        <link rel="stylesheet" href="/static/component.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+		<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+        
+        <style type="text/css">
+            .foo{
+                font-size: 30px;
+                font-weight: 600;
+                text-align: center;
+            }
+            div.demo {
+                display: table;
+                width: 100%;
+                table-layout: fixed;    /* For cells of equal size */
+            }
+            div.demo span {
+                display: table-cell;
+                text-align: center;
+            }
+        </style>
+        
+        <style type="text/css">
+            html{
+                background-color: #A64253;
+            }
+            .Logo{
+                height: 20%;
+            }
+            
+            .logoSub{
+                position: absolute;
+                top: 1%;
+                left: 0.5%;
+                height: 6%;
+            }
+            
+            .container{
+                position: absolute;
+                top:20%;
+                width: 80%;
+                left: 10%;
+            }
+
+            .content{
+                background-color: #FCEADE;
+                width: 60%;
+                padding-top: 10%;
+                margin-right: 20%;
+                margin-left: 20%;
+                padding-bottom: 4%;
+            }
+            .random{
+                color: white;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+            }
+            
+            footer{
+                bottom: -38%;
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                left: 0px;
+            }
+            
+            
+            .upload{
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+	</head>
+	
+	<body>
+        <div class="Logo">
+            <img class="logoSub" src="../static/CIBC_DataStudioLogo.png">
+            <h1 class="hTitle1">CIBC Learning Session</h1>
+            <form action="/logout">
+                <input class="Admin_Button" value="Log Out" type="submit">
+            </form>
+        </div>
+		<div class="container">
+			<div id="toHide" class="content">
+                <p class="foo">Thank you for the submission, your data has ran successfully.</p>
+                <p class="foo">Your processed CSV file will download automatically.</p>
+                <br>
+                <br>
+                <br>
+                <form action="" method=get enctype=multipart/form-data>
+                    <input class="upload positive_Button" type="submit" value="Download">
+                    </form>
+		<!-- /container -->
+            </div>
+        </div>
+        <script>
+            var errorOcurred = '{{ errorOcurred }}';
+            var errorInfo = '{{ errorInfo }}';
+
+            var errorBool = errorOcurred == 'True'
+
+            if (errorBool){
+                window.alert(errorInfo);
+            }
+        </script>
+		<footer>
+            <p class="random">For Demo, Please Contact <b>Bart Piwowar</b> - bart.piwowar@cibc.com</p>
+			<p class="random" align="right"> v0.5</p>
+		</footer>
+
+		<script src="../static/custom-file-input.js"></script>
+	</body>
+</html>

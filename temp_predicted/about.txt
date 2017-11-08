@@ -1,0 +1,1 @@
+This is a temporary folder for holding predict data to be sent for prediction.

@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+<form action="/logout">
+	<input class="GoBack_Button" value="Go Back" type="submit">
+</form>
+{% else %}
+ 
+ 
+<form action="/login" method="POST">
+	<div class="login">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>CIBC Learning Session</h1>
+			</div>
+            <script>
+                var errorOcurred = '{{ errorOcurred }}';
+                var errorInfo = '{{ errorInfo }}';
+
+                var errorBool = errorOcurred == 'True'
+
+                if (errorBool){
+                    window.alert(errorInfo);
+                }
+            </script>
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+ 
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer style="text-align: center;">
+            <p class="random">For Questions, Please <b>RAISE YOUR HANDS!</b></p>
+</footer>
+ 
+{% endif %}
+{% endblock %}

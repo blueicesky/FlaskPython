@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Training In Progress</title>
+  
+    <link rel="stylesheet" href="../static/style_loading.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</head>
+
+<body>
+    <div id="loading_div">
+        <div class="foo">Training In Progress</div>
+        <div class="vertical-centered-box">
+            <div class="content">
+                <div class="loader-circle"></div>
+                <div class="loader-line-mask">
+                    <div class="loader-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form name="frm1" id="frm1" action="" method="post">
+        <input type="hidden" value="Accept Changes" name="acc"/>
+    </form>
+    
+    <script>
+        $(document).ready(function(){
+            $("#frm1").submit();
+        });
+    </script>
+        
+    <!--<script  src="../static/loading.js"></script>-->
+
+</body>
+</html>
